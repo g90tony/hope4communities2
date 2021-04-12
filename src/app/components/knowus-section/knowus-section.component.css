@@ -1,0 +1,50 @@
+.section-container {
+  display: flex;
+  width: 100%;
+  height: max-content;
+  margin: 20px 0 10px 0;
+  justify-content: flex-end;
+}
+
+.bg-image {
+  background-image: url("../../../assets/rightBG.png");
+  background-position: end center;
+  width: 90%;
+  height: max-content;
+  padding: 50px 50px;
+}
+
+.text-container {
+  margin: 0;
+  padding: 5px 10px;
+}
+
+.subtitle-text {
+  color: #087a8b;
+  font-size: 16px;
+  text-align: end;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.title-text {
+  font-size: 24px;
+  font-weight: bolder;
+  text-align: end;
+}
+
+.main-text {
+  font-size: 14px;
+  color: #087a8b;
+  text-align: end;
+}
+
+.sub-text {
+  font-size: 14px;
+  margin: 10px 0 10px 50px;
+  text-align: end;
+}
+
+.sub-text span {
+  font-weight: bold;
+}
