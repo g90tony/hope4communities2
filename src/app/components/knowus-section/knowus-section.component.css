@@ -8,8 +8,10 @@
 
 .bg-image {
   background-image: url("../../../assets/rightBG.png");
+  background-size: 110% 96%;
+  background-repeat: no-repeat;
   background-position: end center;
-  width: 90%;
+  width: 80%;
   height: max-content;
   padding: 50px 50px;
 }
