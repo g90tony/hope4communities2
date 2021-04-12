@@ -7,6 +7,7 @@ import { LandingSectionComponent } from './components/landing-section/landing-se
 import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './page/landing/landing-page.component';
 import { KnowusSectionComponent } from './components/knowus-section/knowus-section.component';
+import { FutureSectionComponent } from './components/future-section/future-section.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { KnowusSectionComponent } from './components/knowus-section/knowus-secti
     LandingSectionComponent,
     LandingPageComponent,
     KnowusSectionComponent,
+    FutureSectionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
