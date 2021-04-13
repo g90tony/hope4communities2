@@ -1,0 +1,43 @@
+.work-landing-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "text image";
+  width: 100%;
+  margin-top: 75px;
+}
+
+.work-text-container {
+  grid-area: text;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.work-landing-title {
+  font-size: 42px;
+  width: 50%;
+  text-align: end;
+  color: #087a8b;
+  font-weight: bold;
+}
+
+.work-landing-body {
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.work-image-container {
+  grid-area: image;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-image {
+  padding: 20px;
+  width: 69%;
+}
