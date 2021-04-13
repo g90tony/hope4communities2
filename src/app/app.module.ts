@@ -12,6 +12,7 @@ import { FutureSectionComponent } from './components/future-section/future-secti
 import { TeamSectionComponent } from './components/team-section/team-section.component';
 import { environment } from 'src/environments/environment';
 import { WorkPageComponent } from './page/work-page/work-page.component';
+import { WorkLandingSectionComponent } from './components/work-landing-section/work-landing-section.component';
 
 const firebaseConfig = {
   apiKey: environment.apiKey,
@@ -33,6 +34,7 @@ const firebaseConfig = {
     FutureSectionComponent,
     TeamSectionComponent,
     WorkPageComponent,
+    WorkLandingSectionComponent,
   ],
   imports: [
     BrowserModule,
