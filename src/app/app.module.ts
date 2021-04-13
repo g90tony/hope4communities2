@@ -11,6 +11,7 @@ import { KnowusSectionComponent } from './components/knowus-section/knowus-secti
 import { FutureSectionComponent } from './components/future-section/future-section.component';
 import { TeamSectionComponent } from './components/team-section/team-section.component';
 import { environment } from 'src/environments/environment';
+import { WorkPageComponent } from './page/work-page/work-page.component';
 
 const firebaseConfig = {
   apiKey: environment.apiKey,
@@ -31,6 +32,7 @@ const firebaseConfig = {
     KnowusSectionComponent,
     FutureSectionComponent,
     TeamSectionComponent,
+    WorkPageComponent,
   ],
   imports: [
     BrowserModule,
