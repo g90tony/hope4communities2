@@ -1,0 +1,102 @@
+.section-container {
+  display: flex;
+  width: 100%;
+  height: max-content;
+  margin: 20px 0 10px 0;
+  justify-content: flex-start;
+}
+
+.bg-image {
+  /* background-image: url("../../../assets/leftBG.png"); */
+  background-size: 110% 96%;
+  background-repeat: no-repeat;
+  background-position: start center;
+  width: 80%;
+  height: max-content;
+  padding: 50px 50px;
+}
+
+.text-container {
+  margin: 0;
+  padding: 5px 10px;
+}
+
+.subtitle-text {
+  color: #087a8b;
+  font-size: 16px;
+  text-align: start;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.title-text {
+  font-size: 24px;
+  font-weight: bolder;
+  text-align: start;
+}
+
+.main-text {
+  font-size: 14px;
+  color: #087a8b;
+  text-align: start;
+}
+
+.sub-text {
+  font-size: 14px;
+  margin: 10px 0 10px 50px;
+  text-align: start;
+}
+
+.sub-text span {
+  font-weight: bold;
+}
+
+.team-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.founder-col {
+  display: flex;
+  flex-flow: column wrap;
+  width: 250px;
+  text-align: center;
+  justify-content: flex-start;
+  margin: 20px 40px;
+}
+
+.board-col {
+  display: flex;
+  text-align: center;
+  flex-flow: column wrap;
+  width: 400px;
+  justify-content: flex-start;
+  margin: 20px 40px;
+  align-items: flex-end;
+}
+
+.board-row {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 90%;
+  justify-content: flex-end;
+}
+
+.team-col {
+  margin: 20px 20px;
+}
+
+.board-name {
+  font-size: 14px;
+  margin: 0;
+  font-weight: bold;
+  color: #087a8b;
+}
+.board-description {
+  font-size: 12px;
+  margin: 0;
+}
+
+.board-img {
+  width: 100px;
+}
