@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { LandingPageComponent } from './page/landing/landing-page.component';
 import { KnowusSectionComponent } from './components/knowus-section/knowus-section.component';
 import { FutureSectionComponent } from './components/future-section/future-section.component';
+import { TeamSectionComponent } from './components/team-section/team-section.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FutureSectionComponent } from './components/future-section/future-secti
     LandingPageComponent,
     KnowusSectionComponent,
     FutureSectionComponent,
+    TeamSectionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
