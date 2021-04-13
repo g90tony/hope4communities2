@@ -1,0 +1,74 @@
+.misvis-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  width: 100%;
+}
+.como-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.square-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 430px;
+  height: 400px;
+}
+
+.bg {
+  background-image: url("../../../assets/futureBG.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: end center;
+  width: 80%;
+  height: 300px;
+  padding: 50px 50px;
+}
+
+.header-text {
+  width: 100%;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 18px;
+}
+
+.body-text {
+  color: #087a8b;
+  font-size: 12px;
+  text-align: center;
+}
+
+.body-text span {
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+}
+.text-container {
+  margin: 0 50px;
+  padding: 5px 10px;
+}
+
+.subtitle-text {
+  color: #087a8b;
+  font-size: 16px;
+  text-align: end;
+  font-weight: bolder;
+  margin: 0;
+}
+
+.title-text {
+  font-size: 24px;
+  font-weight: bolder;
+  text-align: end;
+}
+
+.misvis-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  width: 100%;
+}
