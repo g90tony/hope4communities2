@@ -13,6 +13,7 @@ import { TeamSectionComponent } from './components/team-section/team-section.com
 import { environment } from 'src/environments/environment';
 import { WorkPageComponent } from './page/work-page/work-page.component';
 import { WorkLandingSectionComponent } from './components/work-landing-section/work-landing-section.component';
+import { WorkPurposeSectionComponent } from './components/work-purpose-section/work-purpose-section.component';
 
 const firebaseConfig = {
   apiKey: environment.apiKey,
@@ -35,6 +36,7 @@ const firebaseConfig = {
     TeamSectionComponent,
     WorkPageComponent,
     WorkLandingSectionComponent,
+    WorkPurposeSectionComponent,
   ],
   imports: [
     BrowserModule,
