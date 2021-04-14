@@ -1,0 +1,55 @@
+.purpose-container {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.bg {
+  background-image: url("../../../assets/serviceBG.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 50px;
+  width: 50%;
+  height: 350px;
+  margin: 10px;
+}
+
+.intergrated {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.church {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  text-align: end;
+}
+
+.Education {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.heading {
+  color: #000;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.body {
+  color: #087a8b;
+  font-size: 15px;
+}
+
+.addition-text {
+  font-weight: bold;
+  color: #000;
+  font-size: 13px;
+  margin-left: 20px;
+}
