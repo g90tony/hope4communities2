@@ -25,7 +25,8 @@
 
 .work-landing-body {
   font-size: 18px;
-  text-align: center;
+  width: 50%;
+  text-align: end;
   font-weight: bold;
 }
 
