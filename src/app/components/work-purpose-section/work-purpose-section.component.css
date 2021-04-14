@@ -5,6 +5,24 @@
   padding-bottom: 30px;
 }
 
+.heading-container {
+  width: 100%;
+  padding: 20px 50px;
+}
+.section-subheading {
+  font-size: 14px;
+  font-weight: bold;
+  color: #087a8b;
+  text-align: end;
+  margin-bottom: 0;
+}
+.section-heading {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: end;
+  margin-top: 0;
+}
+
 .bg {
   background-image: url("../../../assets/serviceBG.png");
   background-repeat: no-repeat;
