@@ -4,6 +4,7 @@
 
 .custom-navbar {
   background-color: #087a8b;
+  color: #fff;
 }
 
 .custom-nav-item-container {
@@ -19,6 +20,6 @@
 
 @media screen and (max-width: 576px) {
   .custom-navbar {
-    width: 96vh;
+    width: 100%;
   }
 }
