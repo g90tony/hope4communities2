@@ -64,8 +64,9 @@
   }
 
   .hero-text {
-    font-size: 28px;
+    font-size: 48px;
     text-align: center;
+    width: 100%;
   }
 
   .subhero-text {
