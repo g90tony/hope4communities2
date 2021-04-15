@@ -1,1 +1,56 @@
-<p>contact-landing works!</p>
+<div class="contact-landing-container">
+  <div class="contact-text-container">
+    <p class="contact-landing-title">Let's Build Together</p>
+    <p class="contact-landing-body">Inspire. Empower. Connect.</p>
+
+    <div class="bg">
+      <form class="contact-form">
+        <p class="contact-form-header">Talk to Us</p>
+        <div class="form-group contact-form-group">
+          <label class="contact-form-lable" for="name">Name</label>
+          <input
+            type="text"
+            class="form-control form-control-sm contact-form-input"
+            name="name"
+            id="name"
+            aria-describedby="helpId"
+            placeholder="John Doe"
+          />
+        </div>
+
+        <div class="form-group contact-form-group">
+          <label class="contact-form-lable" for="email">Email Address</label>
+          <input
+            type="text"
+            class="form-control form-control-sm contact-form-input"
+            name="email"
+            id="email"
+            aria-describedby="helpId"
+            placeholder="johndoe@example.com"
+          />
+        </div>
+
+        <div class="form-group contact-form-group">
+          <label class="contact-form-lable" for="message">Message</label>
+          <textarea
+            class="form-control form-control-sm contact-form-input"
+            name="message"
+            id="message"
+            rows="3"
+            placeholder="Type your message here"
+          ></textarea>
+        </div>
+        <div class="mt-5">
+          <button class="btn btn-sm contact-form-button">Send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="contact-image-container">
+    <img
+      class="landing-image"
+      src="../../../assets/contactLandingImage.png"
+      alt=""
+    />
+  </div>
+</div>
