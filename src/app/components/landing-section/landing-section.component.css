@@ -53,7 +53,7 @@
   .landing-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas: "text" "image";
+    grid-template-areas: "image" "text";
   }
 
   .landing-text-container {
@@ -75,7 +75,7 @@
   }
 
   .landing-image-container {
-    width: 100%;
-    margin: 10px;
+    width: 90%;
+    margin: 20px auto;
   }
 }
