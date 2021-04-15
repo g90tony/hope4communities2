@@ -100,3 +100,12 @@
 .board-img {
   width: 100px;
 }
+
+@media screen and (max-width: 576px) {
+  .founder-col {
+    width: 100%;
+  }
+  .board-col {
+    width: 100%;
+  }
+}
