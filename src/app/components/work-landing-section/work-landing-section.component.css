@@ -42,3 +42,22 @@
   padding: 20px;
   width: 69%;
 }
+
+@media screen and (max-width: 576px) {
+  .work-landing-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "image" "text";
+  }
+
+  .work-landing-title {
+    font-size: 48px;
+    text-align: center;
+    width: 100%;
+  }
+  .work-landing-body {
+    font-size: 18px;
+    width: 100%;
+    text-align: center;
+  }
+}
