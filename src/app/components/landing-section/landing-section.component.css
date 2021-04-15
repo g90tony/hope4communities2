@@ -58,6 +58,7 @@
 
   .landing-text-container {
     margin: 10px;
+    width: 100%;
     justify-content: center;
     align-items: center;
   }
