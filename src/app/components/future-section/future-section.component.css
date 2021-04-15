@@ -25,7 +25,7 @@
   background-repeat: no-repeat;
   background-position: end center;
   width: 80%;
-  height: 300px;
+  min-height: 300px;
   padding: 50px 50px;
 }
 
@@ -71,4 +71,14 @@
   flex-flow: row wrap;
   justify-content: flex-end;
   width: 100%;
+}
+
+@media screen and (max-width: 576px) {
+  .misvis-row {
+    justify-content: center;
+  }
+
+  .como-row {
+    justify-content: center;
+  }
 }
