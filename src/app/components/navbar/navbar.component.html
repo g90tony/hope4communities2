@@ -1,10 +1,10 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark custom-navbar">
-  <button class="navbar-brand btn" href="#">
+  <button class="navbar-brand btn">
     <img src="assets/logo.png" class="nav-logo" alt="logo" />
   </button>
   <button
     class="navbar-toggler"
-    type="button"
+    routerLink="/"
     data-toggle="collapse"
     data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent"
@@ -17,13 +17,31 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav nav justify-content-end w-100 mx-3">
       <li class="nav-item active">
-        <button class="btn custom-link nav-link" href="#">Home</button>
+        <button
+          class="btn custom-link nav-link"
+          routerLinkActive="active"
+          routerLink="/"
+        >
+          Home
+        </button>
       </li>
       <li class="nav-item active">
-        <button class="btn custom-link nav-link" href="#">Work</button>
+        <button
+          class="btn custom-link nav-link"
+          routerLinkActive="active"
+          routerLink="/work"
+        >
+          Work
+        </button>
       </li>
       <li class="nav-item active">
-        <button class="btn custom-link nav-link" href="#">Contact</button>
+        <button
+          class="btn custom-link nav-link"
+          routerLinkActive="active"
+          routerLink="/contact"
+        >
+          Contact
+        </button>
       </li>
     </ul>
   </div>
