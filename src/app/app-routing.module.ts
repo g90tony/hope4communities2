@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', component: LandingPageComponent },
   { path: 'work', component: WorkPageComponent },
   { path: 'contact', component: ContactPageComponent },
+  { path: '**', redirectTo: '/' },
 ];
 
 @NgModule({
