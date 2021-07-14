@@ -17,6 +17,7 @@ import { WorkPurposeSectionComponent } from './components/work/work-purpose-sect
 import { ContactPageComponent } from './page/contact-page/contact-page.component';
 import { ContactLandingComponent } from './components/contact/contact-landing/contact-landing.component';
 import { BlogIndexPageComponent } from './page/blog_index/blog-index-page.component';
+import { BlogLandingSectionComponent } from './components/blog_index/landing-section copy/blog-landing-section.component';
 
 const firebaseConfig = {
   apiKey: environment.apiKey,
@@ -43,6 +44,7 @@ const firebaseConfig = {
     ContactPageComponent,
     ContactLandingComponent,
     BlogIndexPageComponent,
+    BlogLandingSectionComponent,
   ],
   imports: [
     BrowserModule,
