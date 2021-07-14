@@ -7,7 +7,7 @@
 }
 
 .bg-image {
-  background-image: url("../../../assets/rightBG.png");
+  background-image: url("../../../../assets/rightBG.png");
   background-size: 100% 96%;
   background-repeat: no-repeat;
   background-position: end center;
