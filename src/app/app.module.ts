@@ -20,6 +20,7 @@ import { BlogIndexPageComponent } from './page/blog_index/blog-index-page.compon
 import { BlogLandingSectionComponent } from './section/blog_index/landing-section/blog-landing-section.component';
 import { WeeksBlogComponent } from './section/blog_index/weeks-blog/weeks-blog.component';
 import { BlogItemComponent } from './components/blog-item/blog-item.component';
+import { BlogNavbarComponent } from './components/blog-navbar/blog-navbar.component';
 
 const firebaseConfig = {
   apiKey: environment.apiKey,
@@ -49,6 +50,7 @@ const firebaseConfig = {
     BlogLandingSectionComponent,
     WeeksBlogComponent,
     BlogItemComponent,
+    BlogNavbarComponent,
   ],
   imports: [
     BrowserModule,
