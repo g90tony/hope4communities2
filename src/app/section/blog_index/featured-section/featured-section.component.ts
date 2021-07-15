@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'blog-featured-posts',
-  templateUrl: './featured-blog.component.html',
-  styleUrls: ['./featured-blog.component.css'],
+  templateUrl: './featured-section.component.html',
+  styleUrls: ['./featured-section.component.css'],
 })
 export class FeaturedBlogComponent implements OnInit {
   constructor() {}
