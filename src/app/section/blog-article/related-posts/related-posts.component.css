@@ -1,0 +1,11 @@
+.related-posts-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 30px;
+}
+
+.related-header {
+  font-size: 24px;
+  font-weight: 800;
+  color: #087a8b;
+}
