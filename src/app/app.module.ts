@@ -28,6 +28,8 @@ import { BlogResultsHeaderComponent } from './section/blog-results/blog-results-
 import { BlogViewArticleComponent } from './page/blog-view-article/blog-view-article.component';
 import { BlogRelatedItemComponent } from './components/blog-related-item/blog-related-item.component';
 import { AllPostsBlogComponent } from './section/blog_index/all-posts-section/all-posts-section.component';
+import { ArticleLandingSectionComponent } from './section/blog-article/landing-section/article-landing-section.component';
+import { BlogArticleContentComponent } from './section/blog-article/blog-article-content/blog-article-content.component';
 
 const firebaseConfig = {
   apiKey: environment.apiKey,
@@ -65,6 +67,8 @@ const firebaseConfig = {
     BlogViewArticleComponent,
     BlogRelatedItemComponent,
     AllPostsBlogComponent,
+    ArticleLandingSectionComponent,
+    BlogArticleContentComponent,
   ],
   imports: [
     BrowserModule,
