@@ -16,7 +16,7 @@ import { WorkLandingSectionComponent } from './section/work/work-landing-section
 import { WorkPurposeSectionComponent } from './section/work/work-purpose-section/work-purpose-section.component';
 import { ContactPageComponent } from './page/contact-page/contact-page.component';
 import { ContactLandingComponent } from './section/contact/contact-landing/contact-landing.component';
-import { BlogIndexPageComponent } from './page/blog_index/blog-index-page.component';
+import { BlogIndexPageComponent } from './page/blog-index/blog-index-page.component';
 import { BlogLandingSectionComponent } from './section/blog_index/landing-section/blog-landing-section.component';
 import { WeeksBlogComponent } from './section/blog_index/weeks-blog/weeks-blog.component';
 import { BlogItemComponent } from './components/blog-item/blog-item.component';
