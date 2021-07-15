@@ -1,1 +1,4 @@
-<p>blog-article-content works!</p>
+<div
+  class="blog-article-content"
+  [innerHtml]="returnHtmlFromRichText(current_post.fields.content)"
+></div>
