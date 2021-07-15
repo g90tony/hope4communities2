@@ -1,0 +1,43 @@
+nav {
+  top: 70px;
+}
+
+.nav-logo {
+  width: 65%;
+}
+
+.custom-navbar {
+  background-color: #087a8b;
+  color: #fff;
+}
+
+.custom-nav-item-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.custom-link {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.blog-search-form {
+  font-size: 13px;
+  width: 200px;
+}
+
+.blog-search {
+  border: hidden;
+  border-radius: 20px;
+
+  padding: 7px 10px;
+
+  width: 100%;
+}
+
+@media screen and (max-width: 576px) {
+  .custom-navbar {
+    width: 100%;
+  }
+}
