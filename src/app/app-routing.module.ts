@@ -5,6 +5,7 @@ import { BlogIndexPageComponent } from './page/blog-index/blog-index-page.compon
 import { ContactPageComponent } from './page/contact-page/contact-page.component';
 import { LandingPageComponent } from './page/landing/landing-page.component';
 import { WorkPageComponent } from './page/work-page/work-page.component';
+import { BlogViewArticleComponent } from './page/blog-view-article/blog-view-article.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactPageComponent },
   { path: 'blog', component: BlogIndexPageComponent },
   { path: 'blog/search/:search_query', component: BlogSearchResultsComponent },
+  { path: 'blog/view/:title', component: BlogViewArticleComponent },
 
   { path: '**', redirectTo: '/' },
 ];
