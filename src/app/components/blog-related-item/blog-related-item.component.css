@@ -1,0 +1,57 @@
+.related-item-container {
+  width: 33vw;
+  height: 150px;
+
+  margin: 10px 5px;
+
+  position: relative;
+
+  border-radius: 20px;
+}
+
+.related-item-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+
+  object-fit: cover;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 1;
+}
+
+.related-item-overlay {
+  padding: 10px;
+
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: #087a8b6c;
+
+  z-index: 2;
+}
+
+.related-item-title {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.related-item-body-container {
+  padding: 0 5px;
+  height: 60%;
+  overflow: hidden;
+}
+
+.related-item-body {
+  color: #fff;
+  font-size: 12px;
+}
