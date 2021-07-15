@@ -23,6 +23,7 @@ import { BlogItemComponent } from './components/blog-item/blog-item.component';
 import { BlogNavbarComponent } from './components/blog-navbar/blog-navbar.component';
 import { FeaturedBlogComponent } from './section/blog_index/featured-section/featured-section.component';
 import { BlogSearchResultsComponent } from './page/blog-search-results/blog-search-results.component';
+import { BlogResultsGridComponent } from './section/blog-results/blog-results-grid/blog-results-grid.component';
 
 const firebaseConfig = {
   apiKey: environment.apiKey,
@@ -55,6 +56,7 @@ const firebaseConfig = {
     BlogNavbarComponent,
     FeaturedBlogComponent,
     BlogSearchResultsComponent,
+    BlogResultsGridComponent,
   ],
   imports: [
     BrowserModule,
