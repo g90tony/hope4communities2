@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-featured-blog',
+  selector: 'blog-featured-posts',
   templateUrl: './featured-blog.component.html',
-  styleUrls: ['./featured-blog.component.css']
+  styleUrls: ['./featured-blog.component.css'],
 })
 export class FeaturedBlogComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

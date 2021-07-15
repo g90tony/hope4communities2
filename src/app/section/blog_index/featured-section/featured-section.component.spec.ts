@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FeaturedBlogComponent } from './featured-blog.component';
+import { FeaturedBlogComponent } from './featured-section.component';
 
 describe('FeaturedBlogComponent', () => {
   let component: FeaturedBlogComponent;
@@ -8,9 +8,8 @@ describe('FeaturedBlogComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FeaturedBlogComponent ]
-    })
-    .compileComponents();
+      declarations: [FeaturedBlogComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
