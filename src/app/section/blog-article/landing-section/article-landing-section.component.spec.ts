@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BlogLandingSectionComponent } from './article-landing-section.component';
+import { ArticleLandingSectionComponent } from './article-landing-section.component';
 
-describe('BlogLandingSectionComponent', () => {
-  let component: BlogLandingSectionComponent;
-  let fixture: ComponentFixture<BlogLandingSectionComponent>;
+describe('ArticleLandingSectionComponent', () => {
+  let component: ArticleLandingSectionComponent;
+  let fixture: ComponentFixture<ArticleLandingSectionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BlogLandingSectionComponent],
+      declarations: [ArticleLandingSectionComponent],
     }).compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BlogLandingSectionComponent);
+    fixture = TestBed.createComponent(ArticleLandingSectionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
