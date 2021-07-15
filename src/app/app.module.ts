@@ -31,6 +31,7 @@ import { AllPostsBlogComponent } from './section/blog_index/all-posts-section/al
 import { ArticleLandingSectionComponent } from './section/blog-article/landing-section/article-landing-section.component';
 import { BlogArticleContentComponent } from './section/blog-article/blog-article-content/blog-article-content.component';
 import { ContentfulService } from './services/contentful.service';
+import { RelatedPostsComponent } from './section/blog-article/related-posts/related-posts.component';
 
 const firebaseConfig = {
   apiKey: environment.apiKey,
@@ -70,6 +71,7 @@ const firebaseConfig = {
     AllPostsBlogComponent,
     ArticleLandingSectionComponent,
     BlogArticleContentComponent,
+    RelatedPostsComponent,
   ],
   imports: [
     BrowserModule,
