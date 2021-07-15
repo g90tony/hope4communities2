@@ -26,6 +26,7 @@ import { BlogSearchResultsComponent } from './page/blog-search-results/blog-sear
 import { BlogResultsGridComponent } from './section/blog-results/blog-results-grid/blog-results-grid.component';
 import { BlogResultsHeaderComponent } from './section/blog-results/blog-results-header/blog-results-header.component';
 import { BlogViewArticleComponent } from './page/blog-view-article/blog-view-article.component';
+import { BlogRelatedItemComponent } from './components/blog-related-item/blog-related-item.component';
 
 const firebaseConfig = {
   apiKey: environment.apiKey,
@@ -61,6 +62,7 @@ const firebaseConfig = {
     BlogResultsGridComponent,
     BlogResultsHeaderComponent,
     BlogViewArticleComponent,
+    BlogRelatedItemComponent,
   ],
   imports: [
     BrowserModule,
