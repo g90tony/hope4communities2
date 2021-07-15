@@ -38,6 +38,10 @@ nav {
 
 @media screen and (max-width: 576px) {
   .custom-navbar {
+    display: none;
+  }
+  .blog-search-form {
+    font-size: 13px;
     width: 100%;
   }
 }

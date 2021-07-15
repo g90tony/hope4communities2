@@ -18,8 +18,28 @@
   font-weight: bold;
 }
 
+.blog-search-form {
+  visibility: hidden;
+  width: 0;
+}
+
 @media screen and (max-width: 576px) {
   .custom-navbar {
+    width: 100%;
+  }
+
+  .blog-search-form {
+    visibility: visible;
+    font-size: 13px;
+    width: 90%;
+  }
+
+  .blog-search {
+    border: hidden;
+    border-radius: 20px;
+
+    padding: 7px 10px;
+
     width: 100%;
   }
 }
