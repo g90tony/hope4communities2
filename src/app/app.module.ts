@@ -21,7 +21,7 @@ import { BlogLandingSectionComponent } from './section/blog_index/landing-sectio
 import { WeeksBlogComponent } from './section/blog_index/weeks-blog/weeks-blog.component';
 import { BlogItemComponent } from './components/blog-item/blog-item.component';
 import { BlogNavbarComponent } from './components/blog-navbar/blog-navbar.component';
-import { FeaturedBlogComponent } from './section/blog_index/featured-blog/featured-blog.component';
+import { FeaturedBlogComponent } from './section/blog_index/featured-section/featured-section.component';
 
 const firebaseConfig = {
   apiKey: environment.apiKey,
