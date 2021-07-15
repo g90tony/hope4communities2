@@ -30,6 +30,7 @@ import { BlogRelatedItemComponent } from './components/blog-related-item/blog-re
 import { AllPostsBlogComponent } from './section/blog_index/all-posts-section/all-posts-section.component';
 import { ArticleLandingSectionComponent } from './section/blog-article/landing-section/article-landing-section.component';
 import { BlogArticleContentComponent } from './section/blog-article/blog-article-content/blog-article-content.component';
+import { ContentfulService } from './services/contentful.service';
 
 const firebaseConfig = {
   apiKey: environment.apiKey,
@@ -75,7 +76,7 @@ const firebaseConfig = {
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
   ],
-  providers: [],
+  providers: [ContentfulService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
