@@ -12,16 +12,27 @@ export class ContentfulService {
   });
   constructor() {}
 
-  getProducts(query?: object): Promise<Entry<any>[]> {
+  getBlogPosts(query?: object): Promise<Entry<any>[]> {
     return this.contentfulClient
       .getEntries(
         Object.assign(
           {
-            content_type: environment.contentTypeIds.product,
+            content_type: environment.contentTypeIds.blogPosts,
           },
           query
         )
       )
       .then((res) => res.items);
+  }
+
+  getBlogPost(post_id: string): Promise<Entry<any>> {
+    return this.contentfulClient
+      .getEntry(post_id)
+      .then((res) => {
+        return res;
+      })
+      .catch((err) => {
+        return err;
+      });
   }
 }
