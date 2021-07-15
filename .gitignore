@@ -51,3 +51,4 @@ build/index.html
 .firebase/hosting.ZGlzdFxob3BlLWZvci1jb21tdW5pdGllcw.cache
 firebase.json
 .firebaserc
+firebase-debug.log
