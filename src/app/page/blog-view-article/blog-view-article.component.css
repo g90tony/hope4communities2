@@ -1,0 +1,24 @@
+.article-body-container {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  grid-template-rows: 100%;
+  grid-template-areas: "article related";
+
+  padding: 0 30px;
+}
+
+.article-container {
+  grid-area: article;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.related-article-container {
+  grid-area: related;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
