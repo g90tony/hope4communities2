@@ -3,3 +3,10 @@
 
   margin-top: 50px;
 }
+
+@media screen and (max-width: 576px) {
+  .blog-article-content {
+    margin-top: 10px;
+    width: 80%;
+  }
+}
