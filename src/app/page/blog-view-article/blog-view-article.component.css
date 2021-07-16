@@ -22,3 +22,19 @@
   flex-direction: column;
   align-items: flex-start;
 }
+
+@media screen and (max-width: 576px) {
+  .article-body-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "article" "related";
+  }
+
+  .article-container {
+    width: 100%;
+  }
+  .related-article-container {
+    width: 100%;
+  }
+}

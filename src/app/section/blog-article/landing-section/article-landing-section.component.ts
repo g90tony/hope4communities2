@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'article-landing-section',
@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticleLandingSectionComponent implements OnInit {
   constructor() {}
+
+  @Input() image: any;
+  @Input() title: any;
+  @Input() date: any;
+  @Input() author: any;
 
   ngOnInit(): void {}
 }

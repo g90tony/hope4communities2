@@ -1,10 +1,17 @@
 <div class="article-container">
   <blog-navbar></blog-navbar>
-  <article-landing-section></article-landing-section>
+  <article-landing-section
+    [image]="current_post.fields.image.fields.file"
+    [title]="current_post.fields.title"
+    [author]="current_post.fields.author"
+    [date]="current_post.sys.createdAt"
+  ></article-landing-section>
 
   <div class="article-body-container">
     <div class="article-container">
-      <blog-article-content></blog-article-content>
+      <blog-article-content
+        [content]="current_post.fields.content"
+      ></blog-article-content>
     </div>
     <div class="related-article-container">
       <blog-related-posts></blog-related-posts>

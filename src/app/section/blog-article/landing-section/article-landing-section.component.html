@@ -1,14 +1,10 @@
 <div class="landing-container">
   <div class="landing-text-container">
-    <p class="hero-text">Blog Title</p>
-    <p class="subhero-text">20 September 2020</p>
-    <p class="subhero-text">Author</p>
+    <p class="hero-text">{{ title }}</p>
+    <p class="subhero-text">{{ date | date: "fullDate" }}</p>
+    <p class="subhero-text">{{ author }}</p>
   </div>
   <div class="landing-image-container">
-    <img
-      src="https://images.pexels.com/photos/6646852/pexels-photo-6646852.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940s"
-      alt="landing"
-      class="landing-image"
-    />
+    <img src="{{ image.url }}" alt="landing" class="landing-image" />
   </div>
 </div>
