@@ -34,6 +34,7 @@ import { ContentfulService } from './services/contentful.service';
 import { RelatedPostsComponent } from './section/blog-article/related-posts/related-posts.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BlogBreadcrumbComponent } from './components/blog-breadcrumb/blog-breadcrumb.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 
 const firebaseConfig = {
   apiKey: environment.apiKey,
@@ -75,6 +76,7 @@ const firebaseConfig = {
     BlogArticleContentComponent,
     RelatedPostsComponent,
     BlogBreadcrumbComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
