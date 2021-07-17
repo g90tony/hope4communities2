@@ -36,9 +36,9 @@ export class ContentfulService {
       });
   }
 
-  getRelatedPosts(related_tags: string): Promise<Entry<any>[]> {
+  getRelatedPosts(tags: string): Promise<Entry<any>[]> {
     return this.contentfulClient
-      .getEntries({ 'metadata.tags.sys.id[in]': related_tags })
+      .getEntries({ 'metadata.tags.sys.id[exists]': tags })
       .then((entries) => {
         return entries.items;
       });

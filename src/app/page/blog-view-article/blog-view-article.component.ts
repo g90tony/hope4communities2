@@ -26,11 +26,16 @@ export class BlogViewArticleComponent implements OnInit {
 
     this.bloGService.getBlogPost(this.article_id).then((results) => {
       this.current_post = results;
-      let related_tags: string = '';
+      let meta_tags = this.current_post.metadata.tags;
+      let related_tags: string = `${meta_tags[0].sys.id}`;
 
-      this.current_post.metadata.tags.forEach((tag) => {
-        related_tags = related_tags + `${tag.sys.id}`;
-      });
+      console.log(meta_tags);
+
+      for (let i = 1; i < meta_tags.length; i++) {
+        related_tags = related_tags + `, ${meta_tags[i].sys.id}`;
+      }
+
+      console.log(related_tags);
 
       this.bloGService.getRelatedPosts(related_tags).then((res) => {
         this.related_posts = res;
