@@ -35,4 +35,12 @@ export class ContentfulService {
         return err;
       });
   }
+
+  getRelatedPosts(related_tags: string): Promise<Entry<any>[]> {
+    return this.contentfulClient
+      .getEntries({ 'metadata.tags.sys.id[in]': related_tags })
+      .then((entries) => {
+        return entries.items;
+      });
+  }
 }

@@ -1,26 +1,20 @@
 <div class="related-item-container">
   <img
-    src="https://images.pexels.com/photos/6646852/pexels-photo-6646852.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940s"
+    src="{{ item.fields.image.fields.file.url }}"
     alt=""
     class="related-item-image"
   />
   <div class="related-item-overlay">
-    <p class="related-item-title">Blog Title</p>
+    <p class="related-item-title">{{ item.fields.title }}</p>
     <div class="related-item-body-container">
       <p class="related-item-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Amet luctus
-        venenatis lectus magna fringilla urna porttitor rhoncus. Quam
-        pellentesque nec nam aliquam sem. Lacus luctus accumsan tortor posuere
-        ac ut. Ante metus dictum at tempor commodo ullamcorper a lacus
-        vestibulum. Amet nisl purus in mollis nunc sed id. Aliquet nibh praesent
-        tristique magna sit amet. Proin libero nunc consequat interdum. Nulla
-        facilisi nullam vehicula ipsum a. Ac auctor augue mauris augue neque
-        gravida.
+        {{ item.fields.description }}
       </p>
     </div>
     <div class="row justify-content-end mx-3">
-      <a href="/" class="related-item-link">Read Article</a>
+      <a href="/blog/view/{{ item.sys.id }}" class="related-item-link"
+        >Read Article</a
+      >
     </div>
   </div>
 </div>

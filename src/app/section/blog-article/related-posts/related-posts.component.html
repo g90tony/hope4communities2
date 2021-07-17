@@ -1,8 +1,6 @@
 <div class="related-posts-container">
   <p class="related-header">Related Posts</p>
-  <blog-related-item></blog-related-item>
-  <blog-related-item></blog-related-item>
-  <blog-related-item></blog-related-item>
-  <blog-related-item></blog-related-item>
-  <blog-related-item></blog-related-item>
+  <div *ngFor="let item of related">
+    <blog-related-item [item]="item"></blog-related-item>
+  </div>
 </div>

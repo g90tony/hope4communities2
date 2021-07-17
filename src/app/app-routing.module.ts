@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactPageComponent },
   { path: 'blog', component: BlogIndexPageComponent },
   { path: 'blog/search/:search_query', component: BlogSearchResultsComponent },
-  { path: 'blog/view/:title', component: BlogViewArticleComponent },
+  { path: 'blog/view/:id', component: BlogViewArticleComponent },
 
   { path: '**', redirectTo: '/' },
 ];
