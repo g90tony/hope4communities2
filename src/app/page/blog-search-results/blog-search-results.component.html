@@ -1,26 +1,10 @@
 <div class="results-container">
   <blog-navbar></blog-navbar>
-  <blog-results-header></blog-results-header>
-  <div class="results-grid">
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
-    <blog-item></blog-item>
+  <blog-results-header
+    [search_query]="search_query"
+    [results_count]="results_count"
+  ></blog-results-header>
+  <div class="results-grid" *ngFor="let item of search_results">
+    <blog-item [item]="item"></blog-item>
   </div>
 </div>

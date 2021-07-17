@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'blog-results-header',
@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogResultsHeaderComponent implements OnInit {
   constructor() {}
+
+  @Input() search_query;
+  @Input() results_count;
 
   ngOnInit(): void {}
 }

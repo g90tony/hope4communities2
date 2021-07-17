@@ -32,6 +32,7 @@ import { ArticleLandingSectionComponent } from './section/blog-article/landing-s
 import { BlogArticleContentComponent } from './section/blog-article/blog-article-content/blog-article-content.component';
 import { ContentfulService } from './services/contentful.service';
 import { RelatedPostsComponent } from './section/blog-article/related-posts/related-posts.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 const firebaseConfig = {
   apiKey: environment.apiKey,
@@ -77,6 +78,7 @@ const firebaseConfig = {
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
+    ReactiveFormsModule,
   ],
   providers: [ContentfulService],
   bootstrap: [AppComponent],
