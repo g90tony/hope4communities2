@@ -6,7 +6,10 @@
     [author]="current_post.fields.author"
     [date]="current_post.sys.createdAt"
   ></article-landing-section>
-
+  <blog-breadcrumb
+    [post_title]="current_post.fields.title"
+    [post_id]="current_post.sys.id"
+  ></blog-breadcrumb>
   <div class="article-body-container">
     <div class="article-container">
       <blog-article-content
