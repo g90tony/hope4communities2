@@ -33,6 +33,7 @@ import { BlogArticleContentComponent } from './section/blog-article/blog-article
 import { ContentfulService } from './services/contentful.service';
 import { RelatedPostsComponent } from './section/blog-article/related-posts/related-posts.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BlogBreadcrumbComponent } from './components/blog-breadcrumb/blog-breadcrumb.component';
 
 const firebaseConfig = {
   apiKey: environment.apiKey,
@@ -73,6 +74,7 @@ const firebaseConfig = {
     ArticleLandingSectionComponent,
     BlogArticleContentComponent,
     RelatedPostsComponent,
+    BlogBreadcrumbComponent,
   ],
   imports: [
     BrowserModule,
