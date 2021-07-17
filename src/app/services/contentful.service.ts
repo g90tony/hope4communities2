@@ -43,4 +43,12 @@ export class ContentfulService {
         return entries.items;
       });
   }
+
+  getSearchQuery(search_query: string): Promise<Entry<any>[]> {
+    return this.contentfulClient
+      .getEntries({ query: search_query })
+      .then((entries) => {
+        return entries.items;
+      });
+  }
 }
