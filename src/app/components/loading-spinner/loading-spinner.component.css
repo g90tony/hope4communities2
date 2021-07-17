@@ -8,7 +8,7 @@
   left: 0;
   z-index: 10;
 
-  background-color: #ffffff;
+  background-color: #087a8b;
 
   display: flex;
   flex-direction: row;
@@ -46,11 +46,13 @@
   width: 200px;
   height: auto;
 
+  margin-bottom: 30px;
+
   object-fit: cover;
 }
 
 .spinner-text {
-  color: #087a8b;
+  color: #000;
 
   font-size: 18px;
   font-weight: 800;
@@ -59,12 +61,12 @@
 }
 
 .spinner-subtext {
-  color: #000;
+  color: #fff;
 
   font-size: 14px;
   text-align: center;
 }
 
 .spinner-custom-color {
-  border-color: #087a8b !important;
+  color: #fff !important;
 }

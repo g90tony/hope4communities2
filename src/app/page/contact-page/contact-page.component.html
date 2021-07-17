@@ -1,1 +1,10 @@
-<app-contact-landing></app-contact-landing>
+<ng-container *ngIf="page_state; then isLoading; else hasLoaded">
+</ng-container>
+
+<ng-template #hasLoaded
+  ><app-contact-landing></app-contact-landing
+></ng-template>
+
+<ng-template #isLoading>
+  <loading-spinner-animation></loading-spinner-animation>
+</ng-template>

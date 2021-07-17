@@ -4,6 +4,7 @@ import { switchMap } from 'rxjs/operators';
 
 import { Entry } from 'contentful';
 import { ContentfulService } from 'src/app/services/contentful.service';
+import { PageLoadingAnimationService } from 'src/app/services/page-loading-animation.service';
 
 @Component({
   templateUrl: './blog-view-article.component.html',
@@ -13,11 +14,16 @@ export class BlogViewArticleComponent implements OnInit {
   current_post: Entry<any>;
   related_posts: any[];
   article_id: any;
+  page_state: boolean;
 
   constructor(
     private bloGService: ContentfulService,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    private pageLoader: PageLoadingAnimationService
+  ) {
+    this.pageLoader.setLoadTrue();
+    this.page_state = this.pageLoader.getPageState();
+  }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
@@ -49,6 +55,8 @@ export class BlogViewArticleComponent implements OnInit {
 
         this.related_posts = temp;
       });
+      this.pageLoader.setLoadFalse();
+      this.page_state = this.pageLoader.getPageState();
     });
   }
 }

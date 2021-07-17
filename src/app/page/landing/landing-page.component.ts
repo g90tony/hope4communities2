@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageLoadingAnimationService } from 'src/app/services/page-loading-animation.service';
 
 @Component({
   selector: 'app-landing',
@@ -6,7 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./landing-page.component.css'],
 })
 export class LandingPageComponent implements OnInit {
-  constructor() {}
+  page_state: boolean;
+  constructor(private pageLoader: PageLoadingAnimationService) {
+    this.pageLoader.setLoadTrue();
+    this.page_state = this.pageLoader.getPageState();
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.pageLoader.setLoadFalse();
+    this.page_state = this.pageLoader.getPageState();
+  }
 }

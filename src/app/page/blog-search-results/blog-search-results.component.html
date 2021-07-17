@@ -1,10 +1,19 @@
-<div class="results-container">
-  <blog-navbar></blog-navbar>
-  <blog-results-header
-    [search_query]="search_query"
-    [results_count]="results_count"
-  ></blog-results-header>
-  <div class="results-grid" *ngFor="let item of search_results">
-    <blog-item [item]="item"></blog-item>
+<ng-container *ngIf="page_state; then isLoading; else hasLoaded">
+</ng-container>
+
+<ng-template #hasLoaded
+  ><div class="results-container">
+    <blog-navbar></blog-navbar>
+    <blog-results-header
+      [search_query]="search_query"
+      [results_count]="results_count"
+    ></blog-results-header>
+    <div class="results-grid" *ngFor="let item of search_results">
+      <blog-item [item]="item"></blog-item>
+    </div>
   </div>
-</div>
+</ng-template>
+
+<ng-template #isLoading>
+  <loading-spinner-animation></loading-spinner-animation>
+</ng-template>

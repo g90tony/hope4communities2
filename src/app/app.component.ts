@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { observable } from 'rxjs';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { PageLoadingAnimationService } from './services/page-loading-animation.service';
 
 @Component({
   selector: 'app-root',

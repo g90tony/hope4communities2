@@ -1,16 +1,25 @@
-<div class="mt-5">
-  <blog-navbar></blog-navbar>
+<ng-container *ngIf="page_state; then isLoading; else hasLoaded">
+</ng-container>
+
+<ng-template #hasLoaded>
   <div class="mt-5">
-    <blog-landing-section></blog-landing-section>
+    <blog-navbar></blog-navbar>
+    <div class="mt-5">
+      <blog-landing-section></blog-landing-section>
+    </div>
+    <p class="section-header">Post of the week</p>
+    <blog-weeks-blog [data]="posts_of_the_week"></blog-weeks-blog>
+    <p class="section-header mt-4">Featured Posts</p>
+    <div class="mt-3">
+      <blog-featured-posts [data]="featured_posts"></blog-featured-posts>
+    </div>
+    <p class="section-header mt-4">All Posts</p>
+    <div class="mt-3">
+      <all-blog-posts [data]="response_data"></all-blog-posts>
+    </div>
   </div>
-  <p class="section-header">Post of the week</p>
-  <blog-weeks-blog [data]="posts_of_the_week"></blog-weeks-blog>
-  <p class="section-header mt-4">Featured Posts</p>
-  <div class="mt-3">
-    <blog-featured-posts [data]="featured_posts"></blog-featured-posts>
-  </div>
-  <p class="section-header mt-4">All Posts</p>
-  <div class="mt-3">
-    <all-blog-posts [data]="response_data"></all-blog-posts>
-  </div>
-</div>
+</ng-template>
+
+<ng-template #isLoading>
+  <loading-spinner-animation></loading-spinner-animation>
+</ng-template>

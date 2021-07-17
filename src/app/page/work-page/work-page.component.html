@@ -1,4 +1,12 @@
-<div class="mt-5">
-  <app-work-landing-section></app-work-landing-section>
-  <app-work-purpose-section></app-work-purpose-section>
-</div>
+<ng-container *ngIf="page_state; then isLoading; else hasLoaded">
+</ng-container>
+
+<ng-template #hasLoaded
+  ><div class="mt-5">
+    <app-work-landing-section></app-work-landing-section>
+    <app-work-purpose-section></app-work-purpose-section></div
+></ng-template>
+
+<ng-template #isLoading>
+  <loading-spinner-animation></loading-spinner-animation>
+</ng-template>
