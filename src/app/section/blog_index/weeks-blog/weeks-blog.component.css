@@ -60,6 +60,18 @@
   font-size: 14px;
 }
 
+.feature-link {
+  text-decoration: none;
+  color: #087a8b;
+  font-size: 12px;
+  font-weight: 800;
+}
+.feature-link:hover {
+  text-decoration: none;
+  color: #087a8b;
+  font-size: 12px;
+}
+
 @media screen and (max-width: 576px) {
   .feature-post-container {
     flex-direction: column;
