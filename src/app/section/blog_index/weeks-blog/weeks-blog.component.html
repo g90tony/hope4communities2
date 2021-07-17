@@ -1,28 +1,19 @@
 <div class="feature-post-container">
   <div class="feature-image-container">
     <img
-      src="https://images.pexels.com/photos/7293100/pexels-photo-7293100.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+      src="{{ data.fields.image.fields.file.url }}"
       alt=""
       class="feature-image"
     />
   </div>
   <div class="feature-text-container">
-    <p class="feature-date">Published Date: 24 September 2021</p>
-    <p class="feature-title">Feature Blog</p>
+    <p class="feature-date">
+      Published Date: {{ data.sys.createdAt | date: "fullDate" }}
+    </p>
+    <p class="feature-title">{{ data.fields.title }}</p>
     <div class="feature-body-container">
       <p class="feature-body">
-        GENERATED LOREM IPSUM 5 PARAGRAPHS COPY Lorem ipsum dolor sit amet,
-        consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-        et dolore magna aliqua. Eget dolor morbi non arcu risus quis varius. Est
-        velit egestas dui id ornare arcu. Lorem ipsum dolor sit amet. Et
-        molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit.
-        Tellus mauris a diam maecenas. Vitae aliquet nec ullamcorper sit amet
-        risus nullam eget felis. Duis ut diam quam nulla porttitor massa id.
-        Donec adipiscing tristique risus nec feugiat in fermentum posuere. Nulla
-        facilisi morbi tempus iaculis. Dis parturient montes nascetur ridiculus
-        mus mauris vitae ultricies leo. Donec ultrices tincidunt arcu non
-        sodales neque sodales ut. Ut sem viverra aliquet eget. Netus et
-        malesuada fames ac turpis.
+        {{ data.fields.description }}
       </p>
     </div>
   </div>

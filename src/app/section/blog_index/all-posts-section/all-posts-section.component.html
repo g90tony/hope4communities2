@@ -1,8 +1,5 @@
-<div
-  class="mb-5 mx-auto w-100 row justify-content-center"
-  style="padding: 0 30px"
->
-  <blog-item></blog-item>
-  <blog-item></blog-item>
-  <blog-item></blog-item>
+<div class="mb-5 mx-auto row justify-content-start" style="padding: 0 90px">
+  <div *ngFor="let item of data">
+    <blog-item [item]="item"></blog-item>
+  </div>
 </div>

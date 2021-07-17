@@ -1,27 +1,26 @@
 <div class="blog-item-container">
   <div class="blog-image-container">
     <img
-      src="https://images.pexels.com/photos/6646852/pexels-photo-6646852.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+      src="{{ item.fields.image.fields.file.url }}"
       alt=""
       class="blog-image"
     />
   </div>
   <div class="blog-text-container">
-    <p class="blog-date">23 September 2020</p>
-    <p class="blog-title">Blog Title</p>
+    <p class="blog-date">{{ item.sys.createAt | date: "fullDate" }}</p>
+    <p class="blog-title">{{ item.fields.title }}</p>
     <div class="blog-body-container">
       <p class="blog-body">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum.
+        {{ item.fields.description }}
       </p>
     </div>
     <div class="blog-link-container">
-      <a href="#" class="blog-link">Read More >>></a>
+      <a
+        href="javascript:;"
+        routerLink="/blog/view/{{ item.sys.id }}"
+        class="blog-link"
+        >Read More >>></a
+      >
     </div>
   </div>
 </div>
