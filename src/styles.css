@@ -5,6 +5,9 @@
   font-family: "Century Gothic";
   src: url("assets/Century Gothic.ttf");
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Century Gothic";
