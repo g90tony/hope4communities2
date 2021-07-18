@@ -35,6 +35,7 @@ import { RelatedPostsComponent } from './section/blog-article/related-posts/rela
 import { ReactiveFormsModule } from '@angular/forms';
 import { BlogBreadcrumbComponent } from './components/blog-breadcrumb/blog-breadcrumb.component';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
+import { LoadingBarComponent } from './components/loading-bar/loading-bar.component';
 
 const firebaseConfig = {
   apiKey: environment.apiKey,
@@ -77,6 +78,7 @@ const firebaseConfig = {
     RelatedPostsComponent,
     BlogBreadcrumbComponent,
     LoadingSpinnerComponent,
+    LoadingBarComponent,
   ],
   imports: [
     BrowserModule,
