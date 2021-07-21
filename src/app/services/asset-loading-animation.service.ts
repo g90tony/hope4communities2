@@ -11,8 +11,7 @@ export class AssetLoadingAnimationService {
   isLoading: boolean;
 
   constructor() {
-    this.asset_count =
-      this.page_assets.length == 0 ? 0 : this.page_assets.length;
+    this.asset_count = 0;
     this.progression = 0;
     this.progression_percent = 0;
     this.isLoading = false;
@@ -43,12 +42,12 @@ export class AssetLoadingAnimationService {
 
     this.progression_percent = (current_progression / this.asset_count) * 100;
 
-    if (this.progression < current_progression) {
+    if (this.progression <= current_progression) {
       this.progression = current_progression;
     }
   }
 
-  registerAsset(new_asset: { name: string; hasLoaded: false }) {
+  registerAsset(new_asset = { name: '', hasLoaded: false }) {
     if (this.page_assets.length == 0) {
       this.page_assets[0].name = new_asset.name;
       this.page_assets[0].hasLoaded = new_asset.hasLoaded;

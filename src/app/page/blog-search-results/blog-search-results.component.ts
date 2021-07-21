@@ -25,6 +25,8 @@ export class BlogSearchResultsComponent implements OnInit {
   ) {
     this.pageLoader.setLoadTrue();
     this.page_state = this.pageLoader.getPageState();
+    this.asset_progression = 0;
+    this.assets_state = false;
   }
 
   ngOnInit(): void {

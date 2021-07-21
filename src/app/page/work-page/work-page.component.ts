@@ -17,6 +17,8 @@ export class WorkPageComponent implements OnInit {
   ) {
     this.pageLoader.setLoadTrue();
     this.page_state = this.pageLoader.getPageState();
+    this.assets_state = false;
+    this.asset_progression = 0;
   }
 
   ngOnInit(): void {
@@ -24,33 +26,47 @@ export class WorkPageComponent implements OnInit {
     this.page_state = this.pageLoader.getPageState();
     this.loadAssets();
   }
-  loadAssets() {
+
+  loadAssets = () => {
     setTimeout(() => {
       let HTML_assets = document.getElementsByTagName('img');
       let assets = Array.from(HTML_assets);
+      let name = 1;
 
       assets.forEach((asset) => {
         let new_asset = {
-          name: asset.id,
-          hasLoaded: false,
+          name: name.toString(),
+          hasLoaded: asset.complete ? true : false,
         };
+        this.assetLoader.registerAsset(new_asset);
 
-        this.assetLoader.registerAsset({
-          name: asset.id,
-          hasLoaded: false,
-        });
+        name++;
 
-        asset.addEventListener('load', (event) => {
+        if (asset.complete) {
           this.assetLoader.assetHasLoaded(new_asset.name);
-          this.asset_progression = this.assetLoader.getProgress();
 
-          if (this.asset_progression == 100) {
-            setTimeout(() => {
-              this.assets_state = true;
-            }, 1200);
-          }
-        });
-      });
-    }, 10);
-  }
+          this.asset_progression = this.assetLoader.getProgress();
+        } else {
+          asset.addEventListener('load', (event) => {
+            this.assetLoader.assetHasLoaded(new_asset.name);
+            console.log(new_asset);
+            this.asset_progression = this.assetLoader.getProgress();
+
+            if (this.asset_progression == 100) {
+              setTimeout(() => {
+                this.assets_state = true;
+              }, 1200);
+            }
+          });
+        }
+
+        if (this.asset_progression == 100) {
+          setTimeout(() => {
+            this.assets_state = true;
+          }, 1200);
+        }
+      }),
+        10;
+    });
+  };
 }
