@@ -40,11 +40,9 @@ export class AssetLoadingAnimationService {
       }
     });
 
-    this.progression_percent = (current_progression / this.asset_count) * 100;
+    this.progression = current_progression;
 
-    if (this.progression <= current_progression) {
-      this.progression = current_progression;
-    }
+    this.progression_percent = (this.progression / this.asset_count) * 100;
   }
 
   registerAsset(new_asset = { name: '', hasLoaded: false }) {
@@ -56,5 +54,37 @@ export class AssetLoadingAnimationService {
     }
 
     this.asset_count++;
+  }
+
+  assetLoaderEngine(assets) {
+    let name = 1;
+    let progress_percentage = 0;
+
+    assets.forEach((asset) => {
+      let new_asset = {
+        name: name.toString(),
+        hasLoaded: false,
+      };
+
+      this.registerAsset(new_asset);
+
+      name++;
+
+      if (asset.complete) {
+        this.assetHasLoaded(new_asset.name);
+
+        progress_percentage = this.getProgress();
+      } else {
+        asset.addEventListener('load', (event) => {
+          this.assetHasLoaded(new_asset.name);
+          console.log(new_asset);
+          progress_percentage = this.getProgress();
+        });
+      }
+    });
+
+    if (progress_percentage == 100) {
+      this.isLoading = false;
+    }
   }
 }
