@@ -5,20 +5,18 @@
         <img src="../../../assets/logo.png" alt="logo" class="spinner-logo" />
         <p class="spinner-text">
           Loading Page Assets <br />
-          <span> <p class="spinner-subtext">Please wait</p> </span>
+          <span>
+            <p class="spinner-subtext">{{ progression }}% completed</p>
+          </span>
         </p>
       </div>
     </div>
     <div class="spinner-row">
-      <div class="progress">
-        <div
-          class="progress-bar progress-bar-striped bg-danger"
-          role="progressbar"
-          style="width: 100%"
-          aria-valuenow="{{ progression }}"
-          aria-valuemin="0"
-          aria-valuemax="100"
-        ></div>
+      <div
+        class="spinner-grow spinner-custom-color spinner-grow-sm"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
       </div>
     </div>
   </div>

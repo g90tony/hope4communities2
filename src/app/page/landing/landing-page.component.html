@@ -1,15 +1,33 @@
-<ng-container *ngIf="page_state; then isLoading; else hasLoaded">
+<ng-container *ngIf="page_state; then isLoadingPage; else hasLoaded">
 </ng-container>
 
-<ng-template #hasLoaded
-  ><div class="mt-5">
-    <app-landing-section></app-landing-section>
-    <app-knowus-section></app-knowus-section>
-    <app-future-section></app-future-section>
-    <app-team-section></app-team-section>
+<ng-template #hasLoaded>
+  <div *ngIf="assets_state == false">
+    <loading-bar-animation
+      [progression]="asset_progression"
+    ></loading-bar-animation>
+  </div>
+
+  <div class="mt-5">
+    <app-landing-section
+      [assetHasLoaded]="assetHasLoaded"
+      [registerAsset]="registerAsset"
+    ></app-landing-section>
+    <app-knowus-section
+      [assetHasLoaded]="assetHasLoaded"
+      [registerAsset]="registerAsset"
+    ></app-knowus-section>
+    <app-future-section
+      [assetHasLoaded]="assetHasLoaded"
+      [registerAsset]="registerAsset"
+    ></app-future-section>
+    <app-team-section
+      [assetHasLoaded]="assetHasLoaded"
+      [registerAsset]="registerAsset"
+    ></app-team-section>
   </div>
 </ng-template>
 
-<ng-template #isLoading>
+<ng-template #isLoadingPage>
   <loading-spinner-animation></loading-spinner-animation>
 </ng-template>
