@@ -1,8 +1,13 @@
 <ng-container *ngIf="page_state; then isLoading; else hasLoaded">
 </ng-container>
 
-<ng-template #hasLoaded
-  ><div class="article-container">
+<ng-template #hasLoaded>
+  <div *ngIf="assets_state == false">
+    <loading-bar-animation
+      [progression]="asset_progression"
+    ></loading-bar-animation>
+  </div>
+  <div class="article-container">
     <blog-navbar></blog-navbar>
     <article-landing-section
       [image]="current_post.fields.image.fields.file"

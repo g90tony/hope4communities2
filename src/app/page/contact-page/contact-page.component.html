@@ -1,8 +1,13 @@
 <ng-container *ngIf="page_state; then isLoading; else hasLoaded">
 </ng-container>
 
-<ng-template #hasLoaded
-  ><app-contact-landing></app-contact-landing
+<ng-template #hasLoaded>
+  <div *ngIf="assets_state == false">
+    <loading-bar-animation
+      [progression]="asset_progression"
+    ></loading-bar-animation>
+  </div>
+  <app-contact-landing></app-contact-landing
 ></ng-template>
 
 <ng-template #isLoading>

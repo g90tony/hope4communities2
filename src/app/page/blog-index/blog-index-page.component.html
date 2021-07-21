@@ -2,6 +2,11 @@
 </ng-container>
 
 <ng-template #hasLoaded>
+  <div *ngIf="assets_state == false">
+    <loading-bar-animation
+      [progression]="asset_progression"
+    ></loading-bar-animation>
+  </div>
   <div class="mt-5">
     <blog-navbar></blog-navbar>
     <div class="mt-5">

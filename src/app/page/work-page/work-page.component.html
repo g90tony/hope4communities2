@@ -1,8 +1,13 @@
 <ng-container *ngIf="page_state; then isLoading; else hasLoaded">
 </ng-container>
 
-<ng-template #hasLoaded
-  ><div class="mt-5">
+<ng-template #hasLoaded>
+  <div *ngIf="assets_state == false">
+    <loading-bar-animation
+      [progression]="asset_progression"
+    ></loading-bar-animation>
+  </div>
+  <div class="mt-5">
     <app-work-landing-section></app-work-landing-section>
     <app-work-purpose-section></app-work-purpose-section></div
 ></ng-template>

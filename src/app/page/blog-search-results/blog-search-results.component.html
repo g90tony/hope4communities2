@@ -1,8 +1,13 @@
 <ng-container *ngIf="page_state; then isLoading; else hasLoaded">
 </ng-container>
 
-<ng-template #hasLoaded
-  ><div class="results-container">
+<ng-template #hasLoaded>
+  <div *ngIf="assets_state == false">
+    <loading-bar-animation
+      [progression]="asset_progression"
+    ></loading-bar-animation>
+  </div>
+  <div class="results-container">
     <blog-navbar></blog-navbar>
     <blog-results-header
       [search_query]="search_query"
