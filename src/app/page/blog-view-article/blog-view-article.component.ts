@@ -5,6 +5,7 @@ import { switchMap } from 'rxjs/operators';
 import { Entry } from 'contentful';
 import { ContentfulService } from 'src/app/services/contentful.service';
 import { PageLoadingAnimationService } from 'src/app/services/page-loading-animation.service';
+import { AssetLoadingAnimationService } from 'src/app/services/asset-loading-animation.service';
 
 @Component({
   templateUrl: './blog-view-article.component.html',
@@ -16,10 +17,14 @@ export class BlogViewArticleComponent implements OnInit {
   article_id: any;
   page_state: boolean;
 
+  asset_progression: number;
+  assets_state: boolean;
+
   constructor(
     private bloGService: ContentfulService,
     private route: ActivatedRoute,
-    private pageLoader: PageLoadingAnimationService
+    private pageLoader: PageLoadingAnimationService,
+    private assetLoader: AssetLoadingAnimationService
   ) {
     this.pageLoader.setLoadTrue();
     this.page_state = this.pageLoader.getPageState();
@@ -58,5 +63,35 @@ export class BlogViewArticleComponent implements OnInit {
       this.pageLoader.setLoadFalse();
       this.page_state = this.pageLoader.getPageState();
     });
+    this.loadAssets();
+  }
+  loadAssets() {
+    setTimeout(() => {
+      let HTML_assets = document.getElementsByTagName('img');
+      let assets = Array.from(HTML_assets);
+
+      assets.forEach((asset) => {
+        let new_asset = {
+          name: asset.id,
+          hasLoaded: false,
+        };
+
+        this.assetLoader.registerAsset({
+          name: asset.id,
+          hasLoaded: false,
+        });
+
+        asset.addEventListener('load', (event) => {
+          this.assetLoader.assetHasLoaded(new_asset.name);
+          this.asset_progression = this.assetLoader.getProgress();
+
+          if (this.asset_progression == 100) {
+            setTimeout(() => {
+              this.assets_state = true;
+            }, 1200);
+          }
+        });
+      });
+    }, 10);
   }
 }
