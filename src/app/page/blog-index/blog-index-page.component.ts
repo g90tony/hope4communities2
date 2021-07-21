@@ -45,43 +45,19 @@ export class BlogIndexPageComponent implements OnInit {
     setTimeout(() => {
       let HTML_assets = document.getElementsByTagName('img');
       let assets = Array.from(HTML_assets);
-      let name = 1;
 
-      assets.forEach((asset) => {
-        let new_asset = {
-          name: name.toString(),
-          hasLoaded: asset.complete ? true : false,
-        };
-        this.assetLoader.registerAsset(new_asset);
+      this.assetLoader.assetLoaderEngine(assets);
+    }, 500);
 
-        name++;
-
-        if (asset.complete) {
-          this.assetLoader.assetHasLoaded(new_asset.name);
-
-          this.asset_progression = this.assetLoader.getProgress();
-        } else {
-          asset.addEventListener('load', (event) => {
-            this.assetLoader.assetHasLoaded(new_asset.name);
-            console.log(new_asset);
-            this.asset_progression = this.assetLoader.getProgress();
-
-            if (this.asset_progression == 100) {
-              setTimeout(() => {
-                this.assets_state = true;
-              }, 1200);
-            }
-          });
-        }
-
-        if (this.asset_progression == 100) {
-          setTimeout(() => {
-            this.assets_state = true;
-          }, 1200);
-        }
-      }),
-        10;
-    });
+    const progress_checker = setInterval(() => {
+      this.asset_progression = this.assetLoader.getProgress();
+      if (this.asset_progression == 100) {
+        clearInterval(progress_checker);
+        setTimeout(() => {
+          this.assets_state = true;
+        }, 500);
+      }
+    }, 500);
   }
 
   private filterFeatured(data) {

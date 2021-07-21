@@ -47,28 +47,17 @@ export class BlogSearchResultsComponent implements OnInit {
       let HTML_assets = document.getElementsByTagName('img');
       let assets = Array.from(HTML_assets);
 
-      assets.forEach((asset) => {
-        let new_asset = {
-          name: asset.id,
-          hasLoaded: false,
-        };
+      this.assetLoader.assetLoaderEngine(assets);
+    }, 500);
 
-        this.assetLoader.registerAsset({
-          name: asset.id,
-          hasLoaded: false,
-        });
-
-        asset.addEventListener('load', (event) => {
-          this.assetLoader.assetHasLoaded(new_asset.name);
-          this.asset_progression = this.assetLoader.getProgress();
-
-          if (this.asset_progression == 100) {
-            setTimeout(() => {
-              this.assets_state = true;
-            }, 1200);
-          }
-        });
-      });
-    }, 10);
+    const progress_checker = setInterval(() => {
+      this.asset_progression = this.assetLoader.getProgress();
+      if (this.asset_progression == 100) {
+        clearInterval(progress_checker);
+        setTimeout(() => {
+          this.assets_state = true;
+        }, 500);
+      }
+    }, 500);
   }
 }
