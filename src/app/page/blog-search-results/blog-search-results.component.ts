@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
 import { AssetLoadingAnimationService } from 'src/app/services/asset-loading-animation.service';
 import { ContentfulService } from 'src/app/services/contentful.service';
@@ -21,7 +22,9 @@ export class BlogSearchResultsComponent implements OnInit {
     private bloGService: ContentfulService,
     private route: ActivatedRoute,
     private pageLoader: PageLoadingAnimationService,
-    private assetLoader: AssetLoadingAnimationService
+    private assetLoader: AssetLoadingAnimationService,
+    private metaTags: Meta,
+    private titleTag: Title
   ) {
     this.pageLoader.setLoadTrue();
     this.page_state = this.pageLoader.getPageState();
@@ -32,6 +35,11 @@ export class BlogSearchResultsComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params: Params) => {
       this.search_query = params['search_query'];
+      this.titleTag.setTitle(`Search Results for: ${this.search_query}`);
+      this.metaTags.updateTag({
+        name: 'description',
+        content: `This is the search results for ${this.search_results}`,
+      });
     });
 
     this.bloGService.getSearchQuery(this.search_query).then((res) => {

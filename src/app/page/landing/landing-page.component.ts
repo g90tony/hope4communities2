@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { timeout } from 'rxjs/operators';
 import { AssetLoadingAnimationService } from 'src/app/services/asset-loading-animation.service';
 import { PageLoadingAnimationService } from 'src/app/services/page-loading-animation.service';
@@ -9,13 +10,17 @@ import { PageLoadingAnimationService } from 'src/app/services/page-loading-anima
   styleUrls: ['./landing-page.component.css'],
 })
 export class LandingPageComponent implements OnInit {
+  title: string = 'Home: Hope for Communities';
+
   asset_progression: number;
   assets_state: boolean;
   page_state: boolean;
 
   constructor(
     private pageLoader: PageLoadingAnimationService,
-    private assetLoader: AssetLoadingAnimationService
+    private assetLoader: AssetLoadingAnimationService,
+    private metaTags: Meta,
+    private titleTag: Title
   ) {
     this.pageLoader.setLoadTrue();
     this.page_state = this.pageLoader.getPageState();
@@ -25,6 +30,12 @@ export class LandingPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleTag.setTitle(this.title);
+    this.metaTags.updateTag({
+      name: 'Description',
+      content: 'Hope for Communities home page.',
+    });
+
     this.pageLoader.setLoadFalse();
     this.page_state = this.pageLoader.getPageState();
 

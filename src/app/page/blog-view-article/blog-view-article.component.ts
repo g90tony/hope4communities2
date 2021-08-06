@@ -6,6 +6,7 @@ import { Entry } from 'contentful';
 import { ContentfulService } from 'src/app/services/contentful.service';
 import { PageLoadingAnimationService } from 'src/app/services/page-loading-animation.service';
 import { AssetLoadingAnimationService } from 'src/app/services/asset-loading-animation.service';
+import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
   templateUrl: './blog-view-article.component.html',
@@ -24,7 +25,9 @@ export class BlogViewArticleComponent implements OnInit {
     private bloGService: ContentfulService,
     private route: ActivatedRoute,
     private pageLoader: PageLoadingAnimationService,
-    private assetLoader: AssetLoadingAnimationService
+    private assetLoader: AssetLoadingAnimationService,
+    private metaTags: Meta,
+    private titleTag: Title
   ) {
     this.pageLoader.setLoadTrue();
     this.page_state = this.pageLoader.getPageState();
@@ -42,13 +45,15 @@ export class BlogViewArticleComponent implements OnInit {
       let meta_tags = this.current_post.metadata.tags;
       let related_tags: string = `${meta_tags[0].sys.id}`;
 
-      console.log(meta_tags);
-
       for (let i = 1; i < meta_tags.length; i++) {
         related_tags = related_tags + `, ${meta_tags[i].sys.id}`;
       }
 
-      console.log(related_tags);
+      this.titleTag.setTitle(`${results.fields.title}: Hope for Communities`);
+      this.metaTags.updateTag({
+        name: 'description',
+        content: results.fields.description,
+      });
 
       this.bloGService.getRelatedPosts(related_tags).then((res) => {
         this.related_posts = res;
@@ -65,8 +70,10 @@ export class BlogViewArticleComponent implements OnInit {
       this.pageLoader.setLoadFalse();
       this.page_state = this.pageLoader.getPageState();
     });
+
     this.loadAssets();
   }
+
   loadAssets() {
     setTimeout(() => {
       let HTML_assets = document.getElementsByTagName('img');

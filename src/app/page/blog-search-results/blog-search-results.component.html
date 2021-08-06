@@ -13,8 +13,10 @@
       [search_query]="search_query"
       [results_count]="results_count"
     ></blog-results-header>
-    <div class="results-grid" *ngFor="let item of search_results">
-      <blog-item [item]="item"></blog-item>
+    <div class="row justify-content-center">
+      <div class="results-grid" *ngFor="let item of search_results">
+        <blog-item [item]="item"></blog-item>
+      </div>
     </div>
   </div>
 </ng-template>

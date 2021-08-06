@@ -3,13 +3,14 @@ import { Entry } from 'contentful';
 import { AssetLoadingAnimationService } from 'src/app/services/asset-loading-animation.service';
 import { ContentfulService } from 'src/app/services/contentful.service';
 import { PageLoadingAnimationService } from 'src/app/services/page-loading-animation.service';
-
+import { Meta, Title } from '@angular/platform-browser';
 @Component({
   selector: 'app-blog-landing',
   templateUrl: './blog-index-page.component.html',
   styleUrls: ['./blog-index-page.component.css'],
 })
 export class BlogIndexPageComponent implements OnInit {
+  title: string = 'Blog Home: Hope for Communities';
   response_data: any[];
   featured_posts = [];
   posts_of_the_week: any;
@@ -20,7 +21,9 @@ export class BlogIndexPageComponent implements OnInit {
   constructor(
     private blogService: ContentfulService,
     private pageLoader: PageLoadingAnimationService,
-    private assetLoader: AssetLoadingAnimationService
+    private assetLoader: AssetLoadingAnimationService,
+    private metaTags: Meta,
+    private titleTag: Title
   ) {
     this.pageLoader.setLoadTrue();
     this.page_state = this.pageLoader.getPageState();
@@ -29,6 +32,12 @@ export class BlogIndexPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleTag.setTitle(this.title);
+    this.metaTags.updateTag({
+      name: 'Description',
+      content: 'Hope for Communities home page',
+    });
+
     this.blogService.getBlogPosts().then((res) => {
       this.response_data = res;
       this.filterFeatured(this.response_data);
