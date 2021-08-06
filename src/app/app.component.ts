@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 import { observable } from 'rxjs';
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { PageLoadingAnimationService } from './services/page-loading-animation.service';
@@ -9,5 +10,14 @@ import { PageLoadingAnimationService } from './services/page-loading-animation.s
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'Hope For Communities: Enabling hearts, minds and pockets';
+  constructor(private metaTags: Meta) {
+    this.metaTags.addTags([
+      {
+        name: 'keywords',
+        content:
+          'African-based communities, community development, christian-based, east african, NGO, non-profit,  ',
+      },
+      { name: 'robots', content: 'index, follow' },
+    ]);
+  }
 }
