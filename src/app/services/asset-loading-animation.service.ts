@@ -14,11 +14,6 @@ export class AssetLoadingAnimationService {
     this.asset_count = 0;
     this.progression = 0;
     this.progression_percent = 0;
-    this.isLoading = false;
-  }
-
-  getStatus() {
-    return this.isLoading;
   }
 
   getProgress() {
@@ -70,14 +65,13 @@ export class AssetLoadingAnimationService {
 
       name++;
 
-      if (asset.complete) {
+      if (asset.complete && asset.naturalHeight >= 0) {
         this.assetHasLoaded(new_asset.name);
 
         progress_percentage = this.getProgress();
       } else {
         asset.addEventListener('load', (event) => {
           this.assetHasLoaded(new_asset.name);
-          console.log(new_asset);
           progress_percentage = this.getProgress();
         });
       }
