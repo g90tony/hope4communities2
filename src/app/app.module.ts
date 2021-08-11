@@ -81,7 +81,7 @@ const firebaseConfig = {
     LoadingBarComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     ReactiveFormsModule,
