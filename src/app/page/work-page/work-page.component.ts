@@ -24,6 +24,7 @@ export class WorkPageComponent implements OnInit {
     this.page_state = this.pageLoader.getPageState();
     this.assets_state = false;
     this.asset_progression = 0;
+    history.pushState({}, this.title);
   }
 
   ngOnInit(): void {

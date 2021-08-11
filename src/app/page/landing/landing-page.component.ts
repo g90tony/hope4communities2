@@ -27,6 +27,7 @@ export class LandingPageComponent implements OnInit {
 
     this.assets_state = false;
     this.asset_progression = 0;
+    history.pushState({}, this.title);
   }
 
   ngOnInit(): void {
