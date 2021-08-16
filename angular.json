@@ -116,7 +116,7 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/hope-for-communities/server",
-            "main": "src/main.server.ts",
+            "main": "server.ts",
             "tsConfig": "tsconfig.server.json"
           },
           "configurations": {
@@ -132,6 +132,39 @@
               "optimization": true
             }
           }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "hope-for-communities:build:development",
+              "serverTarget": "hope-for-communities:server:development"
+            },
+            "production": {
+              "browserTarget": "hope-for-communities:build:production",
+              "serverTarget": "hope-for-communities:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "hope-for-communities:build:production",
+              "serverTarget": "hope-for-communities:server:production"
+            },
+            "development": {
+              "browserTarget": "hope-for-communities:build:development",
+              "serverTarget": "hope-for-communities:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
