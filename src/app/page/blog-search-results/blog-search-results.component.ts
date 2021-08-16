@@ -40,7 +40,6 @@ export class BlogSearchResultsComponent implements OnInit {
         name: 'description',
         content: `This is the search results for ${this.search_results}`,
       });
-      history.pushState({}, `Search Results for: ${this.search_query}`);
     });
 
     this.bloGService.getSearchQuery(this.search_query).then((res) => {

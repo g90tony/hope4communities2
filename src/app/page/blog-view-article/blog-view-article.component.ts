@@ -54,7 +54,6 @@ export class BlogViewArticleComponent implements OnInit {
         name: 'description',
         content: results.fields.description,
       });
-      history.pushState({}, `${results.fields.title}: Hope for Communities`);
 
       this.bloGService.getRelatedPosts(related_tags).then((res) => {
         this.related_posts = res;

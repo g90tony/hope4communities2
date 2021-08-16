@@ -24,7 +24,6 @@ export class ContactPageComponent implements OnInit {
     this.page_state = this.pageLoader.getPageState();
     this.asset_progression = 0;
     this.assets_state = false;
-    history.pushState({}, this.title);
   }
 
   ngOnInit(): void {
