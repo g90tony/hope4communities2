@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { ActivatedRoute, Params } from '@angular/router';
 import { AssetLoadingAnimationService } from 'src/app/services/asset-loading-animation.service';
@@ -23,6 +24,7 @@ export class BlogSearchResultsComponent implements OnInit {
     private route: ActivatedRoute,
     private pageLoader: PageLoadingAnimationService,
     private assetLoader: AssetLoadingAnimationService,
+    @Inject(PLATFORM_ID) private platformId: any,
     private metaTags: Meta,
     private titleTag: Title
   ) {
@@ -41,14 +43,15 @@ export class BlogSearchResultsComponent implements OnInit {
         content: `This is the search results for ${this.search_results}`,
       });
     });
-
-    this.bloGService.getSearchQuery(this.search_query).then((res) => {
-      this.search_results = res;
-      this.results_count = res.length;
-      this.pageLoader.setLoadFalse();
-      this.page_state = this.pageLoader.getPageState();
-    });
-    this.loadAssets();
+    if (isPlatformBrowser(this.platformId)) {
+      this.bloGService.getSearchQuery(this.search_query).then((res) => {
+        this.search_results = res;
+        this.results_count = res.length;
+        this.pageLoader.setLoadFalse();
+        this.page_state = this.pageLoader.getPageState();
+      });
+      this.loadAssets();
+    }
   }
   loadAssets() {
     setTimeout(() => {

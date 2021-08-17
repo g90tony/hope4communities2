@@ -24,8 +24,7 @@ export class LandingPageComponent implements OnInit {
     private assetLoader: AssetLoadingAnimationService,
     private metaTags: Meta,
     private titleTag: Title,
-    @Inject(PLATFORM_ID) private platformId: any,
-    private documentRef: DocumentRef
+    @Inject(PLATFORM_ID) private platformId: any
   ) {
     this.pageLoader.setLoadTrue();
     this.page_state = this.pageLoader.getPageState();
@@ -41,23 +40,20 @@ export class LandingPageComponent implements OnInit {
       content: 'Hope for Communities home page.',
     });
 
-    this.pageLoader.setLoadFalse();
-    this.page_state = this.pageLoader.getPageState();
+    if (isPlatformBrowser(this.platformId)) {
+      this.pageLoader.setLoadFalse();
+      this.page_state = this.pageLoader.getPageState();
 
-    this.assetRegister();
+      this.assetRegister();
+    }
   }
 
   assetHasLoaded() {}
 
   assetRegister = () => {
-    let HTML_assets;
     setTimeout(() => {
-      if (isPlatformBrowser(this.platformId)) {
-        HTML_assets =
-          this.documentRef.nativeDocument.getElementsByTagName('img');
-      } else {
-        HTML_assets = document.getElementsByTagName('img');
-      }
+      let HTML_assets = document.getElementsByTagName('img');
+
       let assets = Array.from(HTML_assets);
 
       this.assetLoader.assetLoaderEngine(assets);

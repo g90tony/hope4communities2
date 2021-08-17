@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
 import { AssetLoadingAnimationService } from 'src/app/services/asset-loading-animation.service';
 import { PageLoadingAnimationService } from 'src/app/services/page-loading-animation.service';
@@ -17,6 +18,7 @@ export class ContactPageComponent implements OnInit {
   constructor(
     private pageLoader: PageLoadingAnimationService,
     private assetLoader: AssetLoadingAnimationService,
+    @Inject(PLATFORM_ID) private platformId: any,
     private metaTags: Meta,
     private titleTag: Title
   ) {
@@ -32,10 +34,11 @@ export class ContactPageComponent implements OnInit {
       name: 'Description',
       content: 'Hope for Communities contact page.',
     });
-
-    this.pageLoader.setLoadFalse();
-    this.page_state = this.pageLoader.getPageState();
-    this.loadAssets();
+    if (isPlatformBrowser(this.platformId)) {
+      this.pageLoader.setLoadFalse();
+      this.page_state = this.pageLoader.getPageState();
+      this.loadAssets();
+    }
   }
   loadAssets() {
     setTimeout(() => {

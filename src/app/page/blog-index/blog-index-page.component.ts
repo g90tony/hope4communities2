@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { Entry } from 'contentful';
 import { AssetLoadingAnimationService } from 'src/app/services/asset-loading-animation.service';
 import { ContentfulService } from 'src/app/services/contentful.service';
 import { PageLoadingAnimationService } from 'src/app/services/page-loading-animation.service';
 import { Meta, Title } from '@angular/platform-browser';
+import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-blog-landing',
   templateUrl: './blog-index-page.component.html',
@@ -22,6 +23,7 @@ export class BlogIndexPageComponent implements OnInit {
     private blogService: ContentfulService,
     private pageLoader: PageLoadingAnimationService,
     private assetLoader: AssetLoadingAnimationService,
+    @Inject(PLATFORM_ID) private platformId: any,
     private metaTags: Meta,
     private titleTag: Title
   ) {
@@ -38,16 +40,18 @@ export class BlogIndexPageComponent implements OnInit {
       content: 'Hope for Communities home page',
     });
 
-    this.blogService.getBlogPosts().then((res) => {
-      this.response_data = res;
-      this.filterFeatured(this.response_data);
-      this.filterPoW(this.response_data);
+    if (isPlatformBrowser(this.platformId)) {
+      this.blogService.getBlogPosts().then((res) => {
+        this.response_data = res;
+        this.filterFeatured(this.response_data);
+        this.filterPoW(this.response_data);
 
-      this.pageLoader.setLoadFalse();
-      this.page_state = this.pageLoader.getPageState();
-    });
+        this.pageLoader.setLoadFalse();
+        this.page_state = this.pageLoader.getPageState();
+      });
 
-    this.loadAssets();
+      this.loadAssets();
+    }
   }
 
   loadAssets() {
