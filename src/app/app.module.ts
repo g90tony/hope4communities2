@@ -37,6 +37,9 @@ import { BlogBreadcrumbComponent } from './components/blog-breadcrumb/blog-bread
 import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 import { LoadingBarComponent } from './components/loading-bar/loading-bar.component';
 
+import { WindowRef } from './services/window-reference.service';
+import { DocumentRef } from './services/document-reference.service';
+
 const firebaseConfig = {
   apiKey: environment.apiKey,
   authDomain: environment.authDomain,
@@ -86,7 +89,7 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     ReactiveFormsModule,
   ],
-  providers: [ContentfulService],
+  providers: [ContentfulService, WindowRef, DocumentRef],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
