@@ -1,9 +1,12 @@
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
+import { Inject } from '@angular/core';
 import { Component, Input, OnInit } from '@angular/core';
 import { Meta, Title } from '@angular/platform-browser';
-import { timeout } from 'rxjs/operators';
-import { AssetLoadingAnimationService } from 'src/app/services/asset-loading-animation.service';
-import { PageLoadingAnimationService } from 'src/app/services/page-loading-animation.service';
 
+import { AssetLoadingAnimationService } from 'src/app/services/asset-loading-animation.service';
+import { DocumentRef } from 'src/app/services/document-reference.service';
+import { PageLoadingAnimationService } from 'src/app/services/page-loading-animation.service';
 @Component({
   selector: 'app-landing',
   templateUrl: './landing-page.component.html',
@@ -20,7 +23,9 @@ export class LandingPageComponent implements OnInit {
     private pageLoader: PageLoadingAnimationService,
     private assetLoader: AssetLoadingAnimationService,
     private metaTags: Meta,
-    private titleTag: Title
+    private titleTag: Title,
+    @Inject(PLATFORM_ID) private platformId: any,
+    private documentRef: DocumentRef
   ) {
     this.pageLoader.setLoadTrue();
     this.page_state = this.pageLoader.getPageState();
@@ -45,8 +50,14 @@ export class LandingPageComponent implements OnInit {
   assetHasLoaded() {}
 
   assetRegister = () => {
+    let HTML_assets;
     setTimeout(() => {
-      let HTML_assets = document.getElementsByTagName('img');
+      if (isPlatformBrowser(this.platformId)) {
+        HTML_assets =
+          this.documentRef.nativeDocument.getElementsByTagName('img');
+      } else {
+        HTML_assets = document.getElementsByTagName('img');
+      }
       let assets = Array.from(HTML_assets);
 
       this.assetLoader.assetLoaderEngine(assets);
