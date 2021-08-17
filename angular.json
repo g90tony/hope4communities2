@@ -144,7 +144,8 @@
               "browserTarget": "hope-for-communities:build:production",
               "serverTarget": "hope-for-communities:server:production"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
@@ -162,7 +163,8 @@
               "browserTarget": "hope-for-communities:build:development",
               "serverTarget": "hope-for-communities:server:development"
             }
-          }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
