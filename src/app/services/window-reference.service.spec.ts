@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { WindowInstaneService } from './window-instane.service';
+import { WindowRef } from './window-reference.service';
 
-describe('WindowInstaneService', () => {
-  let service: WindowInstaneService;
+describe('WindowRef', () => {
+  let service: WindowRef;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(WindowInstaneService);
+    service = TestBed.inject(WindowRef);
   });
 
   it('should be created', () => {
