@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AngularFireModule } from '@angular/fire';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -10,7 +9,7 @@ import { LandingPageComponent } from './page/landing/landing-page.component';
 import { KnowusSectionComponent } from './section/index/knowus-section/knowus-section.component';
 import { FutureSectionComponent } from './section/index/future-section/future-section.component';
 import { TeamSectionComponent } from './section/index/team-section/team-section.component';
-import { environment } from 'src/environments/environment';
+
 import { WorkPageComponent } from './page/work-page/work-page.component';
 import { WorkLandingSectionComponent } from './section/work/work-landing-section/work-landing-section.component';
 import { WorkPurposeSectionComponent } from './section/work/work-purpose-section/work-purpose-section.component';
@@ -39,16 +38,6 @@ import { LoadingBarComponent } from './components/loading-bar/loading-bar.compon
 
 import { WindowRef } from './services/window-reference.service';
 import { DocumentRef } from './services/document-reference.service';
-
-const firebaseConfig = {
-  apiKey: environment.apiKey,
-  authDomain: environment.authDomain,
-  projectId: environment.projectId,
-  storageBucket: environment.storageBucket,
-  messagingSenderId: environment.messagingSenderId,
-  appId: environment.appId,
-  measurementId: environment.measurementId,
-};
 
 @NgModule({
   declarations: [
@@ -86,7 +75,6 @@ const firebaseConfig = {
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    AngularFireModule.initializeApp(firebaseConfig),
     ReactiveFormsModule,
   ],
   providers: [ContentfulService, WindowRef, DocumentRef],
