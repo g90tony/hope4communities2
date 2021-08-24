@@ -12,7 +12,9 @@
     "dev:ssr": "ng run hope-for-communities:serve-ssr",
     "serve:ssr": "node dist/hope-for-communities/server/main.js",
     "build:ssr": "ng build && ng run hope-for-communities:server",
-    "prerender": "ng run hope-for-communities:prerender"
+    "prerender": "ng run hope-for-communities:prerender",
+    "build:functions": "npm run --prefix functions build",
+    "build:all": "npm run build:ssr && npm run build:functions"
   },
   "private": true,
   "dependencies": {
