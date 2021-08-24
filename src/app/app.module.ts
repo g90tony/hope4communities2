@@ -38,6 +38,16 @@ import { LoadingBarComponent } from './components/loading-bar/loading-bar.compon
 
 import { WindowRef } from './services/window-reference.service';
 import { DocumentRef } from './services/document-reference.service';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+
+const config = {
+  apiKey: environment.firebase.apiKey,
+  authDomain: environment.firebase.authDomain,
+  projectId: environment.firebase.projectId,
+  storageBucket: environment.firebase.storageBucket,
+  messagingSenderId: environment.firebase.messagingSenderId,
+};
 
 @NgModule({
   declarations: [
@@ -74,6 +84,7 @@ import { DocumentRef } from './services/document-reference.service';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    AngularFireModule.initializeApp(config),
     AppRoutingModule,
     ReactiveFormsModule,
   ],
