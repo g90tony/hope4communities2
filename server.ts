@@ -49,10 +49,9 @@ export function app(): express.Express {
 }
 
 function run(): void {
-  const PORT = process.env.PORT || 4000;
   // Start up the Node server
   const server = app();
-  server.listen(PORT);
+  server.listen(process.env.PORT || 4000);
 }
 
 // Webpack will replace 'require' with '__webpack_require__'
