@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "functions/dist/browser",
+            "outputPath": "dist/hope-for-communities/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -115,7 +115,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "functions/dist/server",
+            "outputPath": "dist/hope-for-communities/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json"
           },
