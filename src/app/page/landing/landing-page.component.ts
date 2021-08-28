@@ -35,10 +35,21 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.titleTag.setTitle(this.title);
-    this.metaTags.updateTag({
-      name: 'Description',
-      content: 'Hope for Communities home page.',
-    });
+
+    this.metaTags.addTags([
+      {
+        name: 'Description',
+        content: 'Hope for Communities home page.',
+      },
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'og:url', content: '/' },
+      { name: 'og:title', content: this.title },
+      {
+        name: 'og:description',
+        content:
+          'Empower individuals, communities and local Church to appreciate their God-given potential and confront poverty and injustice.',
+      },
+    ]);
 
     if (isPlatformBrowser(this.platformId)) {
       this.pageLoader.setLoadFalse();
